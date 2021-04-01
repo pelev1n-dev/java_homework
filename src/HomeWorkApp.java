@@ -1,46 +1,60 @@
 public class HomeWorkApp {
     public static void main(String[] args) {
-        printThreeWords();
-        checkSumSign();
-        printColor();
-        compareNumbers();
+        //1
+        int a = 3;
+        int b = 8;
+        boolean isBetween = checkSum(a, b);
+        System.out.println(isBetween);
+        //2
+        int number = -3;
+        checkNumber(number);
+        //3
+        int c = 5;
+        boolean isNegative = isNegative(c);
+        System.out.println(isNegative);
+        //4
+        printString("test", 4);
+        //5
+        boolean leap = leapYear(2021);
+        System.out.println(leap);
     }
-
-    public static void printThreeWords() {
-        System.out.println("Orange \nBanana \nApple");
+    //1
+    public static boolean checkSum (int a, int b ) {
+        int sum = a + b;
+        return 10 < sum && sum <= 20;
     }
-
-    public static void checkSumSign() {
-        int a = 5;
-        int b = 7;
-        if (a + b >= 0) {
-            System.out.println("Сумма положительная");
-        } else {
-            System.out.println("Сумма отрицательная");
-        }
-
-    }
-    public static void printColor() {
-        int value = -101;
-        if (value <= 0) {
-            System.out.println("Красный");
-        }
-        else if (value > 0 && value <= 100) {
-            System.out.println("Желтый");
+    //2
+    public static void checkNumber(int number)
+    {
+        if (number >= 0) {
+            System.out.println("Число положительное!");
         }
         else {
-            System.out.println("Зеленый");
+            System.out.println("Число отрицательное!");
         }
     }
-
-    public static void compareNumbers() {
-        int a = 2;
-        int b = 3;
-        if (a >= b) {
-            System.out.println("a >= b");
-        } else {
-            System.out.println("a < b");
+    //3
+    public static boolean isNegative(int c) {
+        return c < 0;
+    }
+    //4
+    public static void printString(String text, int count)
+    {
+        for (int i = 0; i < count; i++) {
+            System.out.println(text);
         }
     }
-
+    //5
+    public static boolean leapYear(int year)
+    {
+        if (year % 4 == 0 && year % 100 != 0) {
+            return true;
+        }
+        else if (year % 400 == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
